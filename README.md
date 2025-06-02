@@ -135,7 +135,7 @@ MIT License - see LICENSE file for details
 ### 👨‍💻 Author
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
-- Email: gabriel@example.com
+- gabrieldemetrios@gmail.com
 
 ---
 
@@ -270,5 +270,5 @@ Licença MIT - veja arquivo LICENSE para detalhes
 ### 👨‍💻 Autor
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
-- Email: gabriel@example.com
+- gabrieldemetrios@gmail.com
 
