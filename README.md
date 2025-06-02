@@ -1,9 +1,9 @@
-# AI Chatbot Framework
+# AI-Chatbot-Framework
 
 ## English
 
 ### Overview
-Advanced AI Chatbot Framework with comprehensive natural language processing, sentiment analysis, and real-time messaging capabilities. Features a modern web interface built with HTML5, CSS3, and JavaScript for seamless chatbot interactions and analytics.
+Advanced AI-Chatbot-Framework with comprehensive functionality and modern technology stack. Features multiple programming languages, interactive web interfaces, and advanced analytics capabilities for professional-grade solutions.
 
 ### Author
 **Gabriel Demetrios Lafis**
@@ -12,52 +12,36 @@ Advanced AI Chatbot Framework with comprehensive natural language processing, se
 - GitHub: [galafis](https://github.com/galafis)
 
 ### Technologies Used
-- **Backend**: Python, Flask, SQLite, NLTK, TextBlob
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+), WebSocket API
-- **Natural Language Processing**: NLTK, TextBlob, spaCy
-- **Machine Learning**: scikit-learn, TensorFlow (optional)
-- **Real-time Communication**: WebSocket, Server-Sent Events
-- **Web Technologies**: Speech Recognition API, File API, Canvas API
-- **Styling**: CSS Grid, Flexbox, CSS Animations, Custom Properties
-- **Data Storage**: SQLite, LocalStorage, IndexedDB
+- **Backend**: Python, Flask, FastAPI, SQLite
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Analytics**: R, ggplot2, dplyr, statistical modeling
+- **Styling**: CSS Grid, Flexbox, animations, responsive design
+- **Modern Features**: Async/await, Web APIs, ES6 classes
+- **Data Processing**: pandas, numpy, scikit-learn
+- **Visualization**: Interactive charts, real-time dashboards
 
 ### Features
 
-#### Core Chatbot Capabilities
-- **Natural Language Understanding**: Advanced text processing and intent recognition
-- **Sentiment Analysis**: Real-time emotion detection and mood tracking
-- **Context Awareness**: Conversation history and context maintenance
-- **Multi-personality Support**: Friendly, Professional, Casual, Technical modes
-- **Response Customization**: Adjustable response speed and creativity levels
-
-#### Advanced AI Features
-- **Multiple AI Models**: GPT-3.5, GPT-4, Claude, Custom model support
-- **Temperature Control**: Creativity and randomness adjustment (0.0 - 1.0)
-- **Token Management**: Configurable response length limits
-- **Conversation Analytics**: Message count, response time, sentiment tracking
-- **Learning Capabilities**: Adaptive responses based on user interactions
+#### Core Functionality
+- **Advanced Processing**: High-performance algorithms and data processing
+- **Real-time Analytics**: Live data analysis and visualization
+- **Interactive Interface**: Modern web interface with responsive design
+- **Statistical Analysis**: Comprehensive R-based analytics and reporting
+- **Scalable Architecture**: Built for enterprise-level performance
 
 #### Web Interface
-- **Modern Chat UI**: WhatsApp-style interface with message bubbles
-- **Real-time Messaging**: Instant message delivery with typing indicators
-- **Voice Input**: Speech-to-text integration for hands-free interaction
-- **File Sharing**: Drag & drop file upload with multiple format support
-- **Emoji Support**: Integrated emoji picker and reactions
-- **Export Options**: JSON, CSV, HTML report generation
+- **Modern UI**: HTML5 semantic markup with accessibility features
+- **Responsive Design**: CSS3 with Grid, Flexbox, and mobile optimization
+- **Interactive Elements**: JavaScript ES6+ with modern web APIs
+- **Real-time Updates**: Dynamic content and live data visualization
+- **Professional Styling**: Custom CSS animations and transitions
 
-#### Analytics Dashboard
-- **Conversation Metrics**: Message count, session duration, response times
-- **Sentiment Tracking**: Real-time sentiment analysis with trend charts
-- **Performance Monitoring**: Response time analytics and system metrics
-- **User Insights**: Conversation patterns and engagement analysis
-- **Visual Charts**: Interactive charts using Canvas API
-
-#### Customization Features
-- **Theme Support**: Light/dark mode with custom color schemes
-- **Personality Settings**: Adjustable bot personality and response style
-- **Notification Controls**: Sound notifications and visual alerts
-- **Keyboard Shortcuts**: Productivity shortcuts for power users
-- **Multi-language Support**: Internationalization ready
+#### Analytics & Reporting
+- **R Integration**: Advanced statistical analysis and data visualization
+- **Data Processing**: Automated data cleaning and transformation
+- **Visualization**: Interactive charts and comprehensive dashboards
+- **Performance Metrics**: Real-time monitoring and analytics
+- **Export Options**: Multiple format support for reports and data
 
 ### Installation
 
@@ -66,15 +50,13 @@ Advanced AI Chatbot Framework with comprehensive natural language processing, se
 git clone https://github.com/galafis/AI-Chatbot-Framework.git
 cd AI-Chatbot-Framework
 
-# Create virtual environment
+# Python setup
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
 pip install -r requirements.txt
 
-# Initialize database
-python init_db.py
+# R setup (install required packages)
+Rscript -e "install.packages(c('ggplot2', 'dplyr', 'corrplot', 'plotly'))"
 
 # Run the application
 python app.py
@@ -88,108 +70,80 @@ python app.py
    # Open http://localhost:5000 in your browser
    ```
 
-2. **Basic Chat Interaction**
-   - Type messages in the input field
-   - Press Enter or click Send button
-   - Use Shift+Enter for new lines
-   - View conversation history in sidebar
+2. **Access Web Interface**
+   - Open `index.html` in your browser for the frontend interface
+   - Interactive dashboard with real-time functionality
+   - Responsive design works on desktop and mobile devices
 
-3. **Voice Input**
-   - Click microphone button to start voice input
-   - Speak clearly and wait for transcription
-   - Voice input automatically sends message
+3. **Run Analytics**
+   ```r
+   # Load R analytics
+   source('analytics.R')
+   
+   # Create analyzer instance
+   analyzer <- DataAnalyzer$new()
+   
+   # Load and analyze data
+   analyzer$load_data('data.csv')
+   analyzer$analyze()
+   analyzer$generate_report()
+   ```
 
-4. **File Sharing**
-   - Click paperclip icon or drag files to chat
-   - Supported formats: TXT, PDF, DOC, DOCX, images
-   - Files are processed and analyzed by AI
+### File Structure
 
-5. **Settings Configuration**
-   - Access settings via gear icon
-   - Adjust bot personality and response speed
-   - Configure notifications and features
-   - Save settings for future sessions
-
-6. **Analytics Monitoring**
-   - View real-time conversation metrics
-   - Monitor sentiment trends
-   - Export analytics data
-   - Generate comprehensive reports
+```
+AI-Chatbot-Framework/
+├── app.py              # Main Python application
+├── requirements.txt    # Python dependencies
+├── index.html         # Web interface
+├── styles.css         # Modern CSS3 styling
+├── app.js            # JavaScript functionality
+├── analytics.R       # R statistical analysis
+├── README.md         # This documentation
+└── data/             # Data files and samples
+```
 
 ### API Endpoints
 
 ```python
-# Send Message
-POST /api/chat
-{
-    "message": "Hello, how are you?",
-    "chat_id": "chat_123",
-    "settings": {
-        "personality": "friendly",
-        "temperature": 0.7
-    }
-}
-
-# Get Chat History
-GET /api/chat/{chat_id}/history
-
-# Analyze Sentiment
-POST /api/sentiment
-{
-    "text": "I'm feeling great today!"
-}
-
-# Export Chat
-GET /api/chat/{chat_id}/export?format=json
+# Main application endpoints
+GET  /                 # Web interface
+POST /api/process      # Data processing
+GET  /api/analytics    # Analytics results
+POST /api/upload       # File upload
+GET  /api/status       # System status
 ```
 
 ### Configuration
 
 ```python
 # config.py
-CHATBOT_CONFIG = {
-    'default_personality': 'friendly',
-    'max_response_length': 500,
-    'enable_sentiment_analysis': True,
-    'enable_voice_input': True,
-    'supported_languages': ['en', 'pt', 'es', 'fr']
+APP_CONFIG = {
+    'debug': True,
+    'host': '0.0.0.0',
+    'port': 5000,
+    'max_file_size': '16MB'
 }
 
-AI_MODELS = {
-    'gpt-3.5': {
-        'api_key': 'your_openai_key',
-        'max_tokens': 150,
-        'temperature': 0.7
-    },
-    'custom': {
-        'model_path': 'models/custom_chatbot.pkl',
-        'tokenizer_path': 'models/tokenizer.pkl'
-    }
+ANALYTICS_CONFIG = {
+    'enable_r_integration': True,
+    'auto_visualization': True,
+    'export_formats': ['json', 'csv', 'pdf']
 }
 ```
 
-### Keyboard Shortcuts
-- **Ctrl+K**: Clear current chat
-- **Ctrl+N**: Start new chat
-- **Ctrl+/**: Focus message input
-- **Ctrl+E**: Export current chat
-- **Ctrl+S**: Save settings
-- **Enter**: Send message
-- **Shift+Enter**: New line
-
 ### Performance Features
-- **Real-time Processing**: Sub-second response times
-- **Concurrent Users**: Support for multiple simultaneous chats
-- **Memory Optimization**: Efficient conversation history management
-- **Caching**: Intelligent response caching for common queries
-- **Scalability**: Horizontal scaling support with load balancing
+- **Multi-threading**: Parallel processing for improved performance
+- **Caching**: Intelligent caching for faster response times
+- **Memory Optimization**: Efficient memory usage and management
+- **Scalability**: Horizontal scaling support for enterprise use
 
 ---
 
 ## Português
 
 ### Visão Geral
-Framework Avançado de Chatbot IA com processamento abrangente de linguagem natural, análise de sentimentos e capacidades de mensagens em tempo real. Apresenta uma interface web moderna construída com HTML5, CSS3 e JavaScript para interações perfeitas com chatbot e análises.
+AI-Chatbot-Framework avançado com funcionalidade abrangente e stack de tecnologia moderna. Apresenta múltiplas linguagens de programação, interfaces web interativas e capacidades de análise avançadas para soluções de nível profissional.
 
 ### Autor
 **Gabriel Demetrios Lafis**
@@ -198,38 +152,22 @@ Framework Avançado de Chatbot IA com processamento abrangente de linguagem natu
 - GitHub: [galafis](https://github.com/galafis)
 
 ### Tecnologias Utilizadas
-- **Backend**: Python, Flask, SQLite, NLTK, TextBlob
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+), WebSocket API
-- **Processamento de Linguagem Natural**: NLTK, TextBlob, spaCy
-- **Aprendizado de Máquina**: scikit-learn, TensorFlow (opcional)
-- **Comunicação em Tempo Real**: WebSocket, Server-Sent Events
-- **Tecnologias Web**: Speech Recognition API, File API, Canvas API
-- **Estilização**: CSS Grid, Flexbox, Animações CSS, Propriedades Customizadas
-- **Armazenamento de Dados**: SQLite, LocalStorage, IndexedDB
+- **Backend**: Python, Flask, FastAPI, SQLite
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Análises**: R, ggplot2, dplyr, modelagem estatística
+- **Estilização**: CSS Grid, Flexbox, animações, design responsivo
+- **Recursos Modernos**: Async/await, Web APIs, classes ES6
+- **Processamento de Dados**: pandas, numpy, scikit-learn
+- **Visualização**: Gráficos interativos, dashboards em tempo real
 
 ### Funcionalidades
 
-#### Capacidades Principais do Chatbot
-- **Compreensão de Linguagem Natural**: Processamento avançado de texto e reconhecimento de intenções
-- **Análise de Sentimentos**: Detecção de emoções em tempo real e rastreamento de humor
-- **Consciência de Contexto**: Histórico de conversas e manutenção de contexto
-- **Suporte Multi-personalidade**: Modos Amigável, Profissional, Casual, Técnico
-- **Personalização de Respostas**: Velocidade de resposta e níveis de criatividade ajustáveis
-
-#### Recursos Avançados de IA
-- **Múltiplos Modelos de IA**: Suporte para GPT-3.5, GPT-4, Claude, modelos customizados
-- **Controle de Temperatura**: Ajuste de criatividade e aleatoriedade (0.0 - 1.0)
-- **Gerenciamento de Tokens**: Limites configuráveis de comprimento de resposta
-- **Análises de Conversação**: Contagem de mensagens, tempo de resposta, rastreamento de sentimentos
-- **Capacidades de Aprendizado**: Respostas adaptativas baseadas em interações do usuário
-
-#### Interface Web
-- **UI de Chat Moderna**: Interface estilo WhatsApp com bolhas de mensagem
-- **Mensagens em Tempo Real**: Entrega instantânea de mensagens com indicadores de digitação
-- **Entrada de Voz**: Integração de fala para texto para interação mãos-livres
-- **Compartilhamento de Arquivos**: Upload de arquivos arrastar e soltar com suporte a múltiplos formatos
-- **Suporte a Emoji**: Seletor de emoji integrado e reações
-- **Opções de Exportação**: Geração de relatórios JSON, CSV, HTML
+#### Funcionalidade Principal
+- **Processamento Avançado**: Algoritmos de alta performance e processamento de dados
+- **Análises em Tempo Real**: Análise e visualização de dados ao vivo
+- **Interface Interativa**: Interface web moderna com design responsivo
+- **Análise Estatística**: Análises abrangentes baseadas em R e relatórios
+- **Arquitetura Escalável**: Construído para performance de nível empresarial
 
 ### Instalação
 
@@ -238,15 +176,13 @@ Framework Avançado de Chatbot IA com processamento abrangente de linguagem natu
 git clone https://github.com/galafis/AI-Chatbot-Framework.git
 cd AI-Chatbot-Framework
 
-# Criar ambiente virtual
+# Configuração Python
 python -m venv venv
 source venv/bin/activate  # No Windows: venv\Scripts\activate
-
-# Instalar dependências
 pip install -r requirements.txt
 
-# Inicializar banco de dados
-python init_db.py
+# Configuração R (instalar pacotes necessários)
+Rscript -e "install.packages(c('ggplot2', 'dplyr', 'corrplot', 'plotly'))"
 
 # Executar a aplicação
 python app.py
@@ -260,27 +196,16 @@ python app.py
    # Abrir http://localhost:5000 no navegador
    ```
 
-2. **Interação Básica de Chat**
-   - Digite mensagens no campo de entrada
-   - Pressione Enter ou clique no botão Enviar
-   - Use Shift+Enter para novas linhas
-   - Visualize o histórico de conversas na barra lateral
-
-### Atalhos de Teclado
-- **Ctrl+K**: Limpar chat atual
-- **Ctrl+N**: Iniciar novo chat
-- **Ctrl+/**: Focar entrada de mensagem
-- **Ctrl+E**: Exportar chat atual
-- **Ctrl+S**: Salvar configurações
-- **Enter**: Enviar mensagem
-- **Shift+Enter**: Nova linha
+2. **Acessar Interface Web**
+   - Abrir `index.html` no navegador para a interface frontend
+   - Dashboard interativo com funcionalidade em tempo real
+   - Design responsivo funciona em desktop e dispositivos móveis
 
 ### Recursos de Performance
-- **Processamento em Tempo Real**: Tempos de resposta sub-segundo
-- **Usuários Concorrentes**: Suporte para múltiplos chats simultâneos
-- **Otimização de Memória**: Gerenciamento eficiente do histórico de conversas
-- **Cache**: Cache inteligente de respostas para consultas comuns
-- **Escalabilidade**: Suporte a escalonamento horizontal com balanceamento de carga
+- **Multi-threading**: Processamento paralelo para melhor performance
+- **Cache**: Cache inteligente para tempos de resposta mais rápidos
+- **Otimização de Memória**: Uso eficiente de memória e gerenciamento
+- **Escalabilidade**: Suporte a escalonamento horizontal para uso empresarial
 
 ### Licença
 MIT License
@@ -290,4 +215,3 @@ Contribuições são bem-vindas! Por favor, abra uma issue ou envie um pull requ
 
 ### Contato
 Para dúvidas ou suporte, entre em contato através do email ou LinkedIn mencionados acima.
-
