@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced AI Chatbot Framework by Gabriel Demetrios Lafis">
+    <meta name="author" content="Gabriel Demetrios Lafis">
+    <title>AI Chatbot Framework</title>
+    <link rel="stylesheet" href="chatbot.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-robot"></i>
+                    <h1>AI Chatbot Framework</h1>
+                </div>
+                <div class="header-controls">
+                    <button class="btn btn-secondary" id="settingsBtn">
+                        <i class="fas fa-cog"></i> Settings
+                    </button>
+                    <button class="btn btn-primary" id="newChatBtn">
+                        <i class="fas fa-plus"></i> New Chat
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-comments"></i> Chat History</h3>
+                    <button class="btn btn-sm" id="clearHistoryBtn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div class="chat-list" id="chatList">
+                    <!-- Chat history items will be populated here -->
+                </div>
+                
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-details">
+                            <span class="user-name">Gabriel Demetrios Lafis</span>
+                            <span class="user-status">Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Chat Area -->
+            <main class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <div class="bot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="bot-details">
+                            <h3 id="botName">AI Assistant</h3>
+                            <span class="bot-status" id="botStatus">Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="btn btn-sm" id="exportChatBtn">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-sm" id="clearChatBtn">
+                            <i class="fas fa-eraser"></i> Clear
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <div class="bot-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    <p>Hello! I'm your AI assistant. How can I help you today?</p>
+                                    <div class="message-features">
+                                        <span class="feature-tag">Natural Language Processing</span>
+                                        <span class="feature-tag">Sentiment Analysis</span>
+                                        <span class="feature-tag">Context Awareness</span>
+                                    </div>
+                                </div>
+                                <div class="message-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="input-features">
+                        <button class="feature-btn" id="voiceBtn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="feature-btn" id="emojiBtn" title="Emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <button class="feature-btn" id="attachBtn" title="Attach File">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                    </div>
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Type your message here..." 
+                            rows="1"
+                            maxlength="2000"
+                        ></textarea>
+                        <button class="send-btn" id="sendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-info">
+                        <span class="typing-indicator" id="typingIndicator" style="display: none;">
+                            <i class="fas fa-circle"></i>
+                            <i class="fas fa-circle"></i>
+                            <i class="fas fa-circle"></i>
+                            AI is typing...
+                        </span>
+                        <span class="char-count" id="charCount">0/2000</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Panel -->
+            <aside class="right-panel" id="rightPanel">
+                <div class="panel-tabs">
+                    <button class="tab-btn active" data-tab="analytics">
+                        <i class="fas fa-chart-line"></i> Analytics
+                    </button>
+                    <button class="tab-btn" data-tab="settings">
+                        <i class="fas fa-cog"></i> Settings
+                    </button>
+                    <button class="tab-btn" data-tab="help">
+                        <i class="fas fa-question-circle"></i> Help
+                    </button>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div class="tab-content active" id="analytics">
+                    <h4>Conversation Analytics</h4>
+                    <div class="analytics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value" id="messageCount">0</div>
+                            <div class="metric-label">Messages</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="avgResponseTime">0s</div>
+                            <div class="metric-label">Avg Response</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="sentimentScore">Neutral</div>
+                            <div class="metric-label">Sentiment</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="sessionDuration">0m</div>
+                            <div class="metric-label">Session Time</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="sentimentChart"></canvas>
+                    </div>
+                    
+                    <div class="insights-section">
+                        <h5>AI Insights</h5>
+                        <div class="insight-list" id="insightList">
+                            <div class="insight-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Conversation tone is positive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="tab-content" id="settings">
+                    <h4>Chatbot Settings</h4>
+                    <div class="settings-group">
+                        <label for="botPersonality">Bot Personality</label>
+                        <select id="botPersonality">
+                            <option value="friendly">Friendly</option>
+                            <option value="professional">Professional</option>
+                            <option value="casual">Casual</option>
+                            <option value="technical">Technical</option>
+                        </select>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <label for="responseSpeed">Response Speed</label>
+                        <input type="range" id="responseSpeed" min="1" max="5" value="3">
+                        <span id="speedValue">Normal</span>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <label>
+                            <input type="checkbox" id="enableSentiment" checked>
+                            Enable Sentiment Analysis
+                        </label>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <label>
+                            <input type="checkbox" id="enableTyping" checked>
+                            Show Typing Indicator
+                        </label>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <label>
+                            <input type="checkbox" id="enableSound" checked>
+                            Sound Notifications
+                        </label>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <label for="maxTokens">Max Response Length</label>
+                        <input type="number" id="maxTokens" value="150" min="50" max="500">
+                    </div>
+                    
+                    <button class="btn btn-primary" id="saveSettingsBtn">
+                        <i class="fas fa-save"></i> Save Settings
+                    </button>
+                </div>
+
+                <!-- Help Tab -->
+                <div class="tab-content" id="help">
+                    <h4>Help & Documentation</h4>
+                    <div class="help-section">
+                        <h5>Quick Start</h5>
+                        <ul>
+                            <li>Type your message in the input field</li>
+                            <li>Press Enter or click Send</li>
+                            <li>Use voice input with the microphone button</li>
+                            <li>Attach files using the paperclip icon</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="help-section">
+                        <h5>Features</h5>
+                        <ul>
+                            <li><strong>Sentiment Analysis:</strong> Real-time emotion detection</li>
+                            <li><strong>Context Awareness:</strong> Remembers conversation history</li>
+                            <li><strong>Multi-modal:</strong> Text, voice, and file support</li>
+                            <li><strong>Analytics:</strong> Conversation insights and metrics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="help-section">
+                        <h5>Keyboard Shortcuts</h5>
+                        <ul>
+                            <li><kbd>Enter</kbd> - Send message</li>
+                            <li><kbd>Shift + Enter</kbd> - New line</li>
+                            <li><kbd>Ctrl + K</kbd> - Clear chat</li>
+                            <li><kbd>Ctrl + N</kbd> - New chat</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h5>Contact Developer</h5>
+                        <p>
+                            <i class="fas fa-envelope"></i> 
+                            <a href="mailto:gabrieldemetrios@gmail.com">gabrieldemetrios@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fab fa-linkedin"></i> 
+                            <a href="https://www.linkedin.com/in/gabriel-demetrios-lafis-62197711b" target="_blank">
+                                LinkedIn Profile
+                            </a>
+                        </p>
+                        <p>
+                            <i class="fab fa-github"></i> 
+                            <a href="https://github.com/galafis" target="_blank">
+                                GitHub Profile
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal" id="settingsModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Advanced Settings</h3>
+                    <button class="close-btn" id="closeSettingsModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="settings-section">
+                        <h4>AI Model Configuration</h4>
+                        <div class="form-group">
+                            <label for="modelType">Model Type</label>
+                            <select id="modelType">
+                                <option value="gpt-3.5">GPT-3.5 Turbo</option>
+                                <option value="gpt-4">GPT-4</option>
+                                <option value="claude">Claude</option>
+                                <option value="custom">Custom Model</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="temperature">Creativity (Temperature)</label>
+                            <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.7">
+                            <span id="tempValue">0.7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="cancelSettings">Cancel</button>
+                    <button class="btn btn-primary" id="applySettings">Apply</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Upload Modal -->
+        <div class="modal" id="fileModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Upload File</h3>
+                    <button class="close-btn" id="closeFileModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop files here or click to browse</p>
+                        <input type="file" id="fileInput" multiple accept=".txt,.pdf,.doc,.docx,.jpg,.png">
+                    </div>
+                    <div class="file-list" id="fileList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
+
