@@ -1,6 +1,10 @@
 # AI-Chatbot-Framework
 
-![Diagrama de Arquitetura](assets/architecture_diagram.png)
+<!-- 🖼️ Imagem Hero Placeholder -->
+![AI Chatbot Framework Hero Image](assets/hero_image.png)
+
+
+
 
 
 ## English
@@ -190,6 +194,10 @@ For any inquiries, support, or collaboration opportunities, please reach out to 
 ---
 
 ## Português
+
+<!-- 🖼️ Imagem Hero Placeholder -->
+![Imagem Hero do Framework de Chatbot de IA](assets/hero_image.png)
+
 
 ### Visão Geral
 Este projeto apresenta um Framework de Chatbot de IA avançado, meticulosamente projetado e desenvolvido por Gabriel Demetrios Lafis. Ele oferece funcionalidade abrangente, uma pilha de tecnologia moderna e um foco em escalabilidade e desempenho. O framework integra múltiplas linguagens de programação, interfaces web interativas e capacidades analíticas sofisticadas para fornecer soluções de nível profissional para IA conversacional.
