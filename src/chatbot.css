@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.chat-container { background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 400px; height: 600px; display: flex; flex-direction: column; overflow: hidden; }
+.chat-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; text-align: center; }
+.chat-messages { flex: 1; padding: 20px; overflow-y: auto; }
+.message { margin-bottom: 15px; }
+.user-message { text-align: right; }
+.bot-message { text-align: left; }
+.message-bubble { display: inline-block; padding: 10px 15px; border-radius: 15px; max-width: 80%; }
+.user-bubble { background: #667eea; color: white; }
+.bot-bubble { background: #f1f1f1; color: #333; }
+.chat-input { display: flex; padding: 20px; border-top: 1px solid #eee; }
+.chat-input input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
+.chat-input button { margin-left: 10px; padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 20px; cursor: pointer; }
+

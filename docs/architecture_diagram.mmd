@@ -1,0 +1,10 @@
+graph TD
+    A[User Interface] -->|HTML/CSS/JS| B(Web Server - Flask)
+    B -->|API Calls| C{Python Backend}
+    C -->|Data Processing| D[Pandas/Numpy/Scikit-learn]
+    C -->|Database Interaction| E[SQLite]
+    C -->|Analytics Request| F(R Analytics Engine)
+    F -->|Statistical Models/Visualizations| G[ggplot2/dplyr/plotly]
+    G -->|Results| C
+    E -->|Data Storage| H[Data Files]
+
