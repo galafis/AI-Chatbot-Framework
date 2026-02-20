@@ -1,4 +1,4 @@
-Flask
-Flask-SocketIO
-nltk
-textblob
+Flask>=3.0.0
+Flask-SocketIO>=5.3.0
+nltk>=3.8.1
+textblob>=0.18.0
